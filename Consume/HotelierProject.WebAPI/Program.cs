@@ -1,4 +1,10 @@
 
+using HotelierProject.BusinessLayer.Abstract;
+using HotelierProject.BusinessLayer.Concrete;
+using HotelierProject.DataAccessLayer.Abstract;
+using HotelierProject.DataAccessLayer.Concrete;
+using HotelierProject.DataAccessLayer.EntityFramework;
+
 namespace HotelierProject.WebAPI
 {
     public class Program
@@ -13,6 +19,23 @@ namespace HotelierProject.WebAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<Context>();
+
+            builder.Services.AddScoped<IRoomDAL, EFRoomDAL>();
+            builder.Services.AddScoped<IRoomService, RoomManager>();
+
+            builder.Services.AddScoped<IServiceDAL, EFServiceDAL>();
+            builder.Services.AddScoped<IServiceService, ServiceManager>();
+
+            builder.Services.AddScoped<IStaffDAL, EFStaffDAL>();
+            builder.Services.AddScoped<IStaffService, StaffManager>();
+
+            builder.Services.AddScoped<ISubscribeDAL, EFSubscribeDAL>();
+            builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
+
+            builder.Services.AddScoped<ITestimonialDAL, EFTestimonialDAL>();
+            builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
             var app = builder.Build();
 
