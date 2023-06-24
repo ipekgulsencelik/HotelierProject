@@ -1,3 +1,6 @@
+using HotelierProject.DataAccessLayer.Concrete;
+using HotelierProject.EntityLayer.Concrete;
+
 namespace HotelierProject.WebUI
 {
     public class Program
@@ -8,6 +11,9 @@ namespace HotelierProject.WebUI
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<Context>();
+            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 
             builder.Services.AddHttpClient();
 
