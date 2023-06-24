@@ -37,6 +37,15 @@ namespace HotelierProject.WebAPI
             builder.Services.AddScoped<ITestimonialDAL, EFTestimonialDAL>();
             builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
+            builder.Services.AddCors(opt =>
+            {
+                opt.AddPolicy("OtelApiCors", opts =>
+                {
+                    opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -50,6 +59,7 @@ namespace HotelierProject.WebAPI
 
             app.UseAuthorization();
 
+            app.UseCors("OtelApiCors");
 
             app.MapControllers();
 
