@@ -1,8 +1,12 @@
 ﻿using AutoMapper;
 using HotelierProject.EntityLayer.Concrete;
+using HotelierProject.WebUI.DTOs.AboutDTO;
 using HotelierProject.WebUI.DTOs.LoginDTO;
 using HotelierProject.WebUI.DTOs.RegisterDTO;
 using HotelierProject.WebUI.DTOs.ServiceDTO;
+using HotelierProject.WebUI.DTOs.StaffDTO;
+using HotelierProject.WebUI.DTOs.SubscribeDTO;
+using HotelierProject.WebUI.DTOs.TestimonialDTO;
 
 namespace HotelierProject.WebUI.Mappers
 {
@@ -16,6 +20,15 @@ namespace HotelierProject.WebUI.Mappers
 
             CreateMap<CreateNewUserDTO, AppUser>().ReverseMap();
             CreateMap<LoginUserDTO, AppUser>().ReverseMap();
+
+            CreateMap<ResultAboutDTO, About>().ReverseMap();
+            CreateMap<UpdateAboutDTO, About>().ReverseMap();
+
+            CreateMap<ResultTestimonialDTO, Testimonial>().ReverseMap();
+
+            CreateMap<ResultStaffDTO, Staff>().ReverseMap();
+
+            CreateMap<CreateSubscribeDTO, Subscribe>().ReverseMap();
         }
     }
 }
