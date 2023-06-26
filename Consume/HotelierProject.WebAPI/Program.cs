@@ -40,6 +40,9 @@ namespace HotelierProject.WebAPI
             builder.Services.AddScoped<IAboutDAL, EFAboutDAL>();
             builder.Services.AddScoped<IAboutService, AboutManager>();
 
+            builder.Services.AddScoped<IBookingDAL, EFBookingDAL>();
+            builder.Services.AddScoped<IBookingService, BookingManager>();
+
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddCors(opt =>
