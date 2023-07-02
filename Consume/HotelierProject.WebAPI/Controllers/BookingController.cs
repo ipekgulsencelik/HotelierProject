@@ -51,10 +51,10 @@ namespace HotelierProject.WebAPI.Controllers
             return Ok(values);
         }
 
-        [HttpPut("UpdateBookingStatus")]
-        public IActionResult UpdateBookingStatus(int id)
+        [HttpGet("BookingAproved")]
+        public IActionResult BookingAproved(int id)
         {
-            _bookingService.TBookingStatusChangeApproved(id);
+            _bookingService.TBookingStatusChangeApprovedByID(id);
             return Ok();
         }
     }

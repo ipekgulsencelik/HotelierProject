@@ -4,6 +4,7 @@ namespace HotelierProject.DataAccessLayer.Abstract
 {
     public interface IBookingDAL : IGenericDAL<Booking>
     {
-        void BookingStatusChangeApproved(int id);
+        void BookingStatusChangeApproved(Booking booking);
+        void BookingStatusChangeApprovedByID(int id);
     }
 }

@@ -32,6 +32,7 @@ namespace HotelierProject.WebUI.Mappers
             CreateMap<CreateSubscribeDTO, Subscribe>().ReverseMap();
 
             CreateMap<CreateBookingDTO, Booking>().ReverseMap();
+            CreateMap<ApprovedReservationDTO, Booking>().ReverseMap();
         }
     }
 }

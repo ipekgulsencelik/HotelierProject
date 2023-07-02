@@ -13,9 +13,14 @@ namespace HotelierProject.BusinessLayer.Concrete
             _bookingDAL = bookingDAL;
         }
 
-        public void TBookingStatusChangeApproved(int id)
+        public void TBookingStatusChangeApprovedByID(int id)
         {
-            _bookingDAL.BookingStatusChangeApproved(id);
+            _bookingDAL.BookingStatusChangeApprovedByID(id);
+        }
+
+        public void TBookingStatusChangeApproved(Booking booking)
+        {
+            _bookingDAL.BookingStatusChangeApproved(booking);
         }
 
         public void TDelete(Booking entity)

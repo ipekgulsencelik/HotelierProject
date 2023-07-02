@@ -4,6 +4,7 @@ namespace HotelierProject.BusinessLayer.Abstract
 {
     public interface IBookingService : IGenericService<Booking>
     {
-        void TBookingStatusChangeApproved(int id);
+        void TBookingStatusChangeApproved(Booking booking);
+        void TBookingStatusChangeApprovedByID(int id);
     }
 }
